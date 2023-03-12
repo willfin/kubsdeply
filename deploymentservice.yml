@@ -22,17 +22,17 @@ spec:
         
         
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
-  name: nodeapp-service
+     name: myervice
+     labels:
+        app: nodeapp
 spec:
-  selector:
-    app: nodeapp 
-  type: LoadBalancer
-  ports:
-  - protocol: TCP
-    port: 5000
-    targetPort: 3000
-    nodePort: 31110
+    selector:
+        app: nodeapp
+    type: LoadBalancer
+    ports:
+    - nodePort: 31000
+      port: 80
+      targetPort: 80
