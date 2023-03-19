@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nodeserver
-        image: nagamlak/nodeapp:latest
+        image: willfin/jenkinskubernetes:latest
         ports:
         - containerPort: 3000
         
