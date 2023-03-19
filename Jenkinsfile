@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    dockerimagename = "rddeepak/nodeapp"
+    dockerimagename = "willfin/jenkinskubernetes"
     dockerImage = ""
   }
 
@@ -11,7 +11,7 @@ pipeline {
 
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/naga1979/nodeapp_test.git'
+        git 'https://github.com/willfin/kubsdeply.git'
       }
     }
 
@@ -25,7 +25,7 @@ pipeline {
 
     stage('Pushing Image') {
       environment {
-               registryCredential = 'docker'
+               registryCredential = 'dockerhub'
            }
       steps{
         script {
